@@ -1,0 +1,46 @@
+@import './variables.scss';
+@import './mixin.scss';
+
+.recipes-page {
+    margin-top: 2rem;
+    h3 {
+        color: rgba(0, 0, 0, 0.8);
+        font-weight: 300;
+        font-size: 1.5rem;
+    }
+    .recipes-list {
+        width: 85%;
+        ul {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+            grid-template-rows: auto;
+            li {
+                cursor: pointer;
+                margin-bottom: 4rem;
+                .img-container {
+                    display: flex;
+                    justify-content: center;
+                    img {
+                        width: 200px;
+                        height: 200px;
+                        border-radius: 50%;
+                        object-fit: cover;
+                    }
+                }
+                h3 {
+                    text-align: center;
+                    margin-bottom: 1rem;
+                }
+                p {
+                    font-size: 12px;
+                    text-align: center;
+                }
+            }
+        }
+    }
+    p {
+        font-size: 18px;
+        color: rgba(0, 0, 0, 0.8);
+        font-weight: 300;
+    }
+}

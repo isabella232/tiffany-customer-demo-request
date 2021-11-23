@@ -1,0 +1,159 @@
+@import "../SCSS/variables.scss";
+
+
+.header{
+    width: 100%;
+    margin: 0 auto;
+    padding: 1rem 0;
+    background-color: $third-color;
+}
+
+.header__up{
+    display: flex;
+    justify-content: flex-end;
+    width: 90%;
+    margin: 0 auto;
+    ul{
+        display: flex;
+        align-items: center;
+        gap: 2rem;
+        width: 50%;
+        justify-content: flex-end;
+
+        .register{
+            font-weight: bold;
+            color: $second-color;
+        }
+    }
+
+    li{
+        font-size: 0.8rem;
+        display: flex;
+        align-items: center;
+
+        .chevron-down{
+            margin-top: 0.1rem;
+        }
+
+        svg{
+            width: 1rem;
+            margin-left: 0.5rem ;
+            cursor: pointer;
+        }
+    }
+}
+
+.header-wrapper {
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .list-img-wrapper {
+        display: flex;
+        align-items: center;
+    }
+    .logo {
+        width: 30%;
+        cursor: pointer;
+    }
+
+    .search-wrapper {
+        // border-left: 1px solid $third-color;
+        width: 40%;
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        .search-placeholder {
+            color: $main-color;
+            font-weight: 200;
+            font-size: 1rem;
+            margin-left: 1rem;
+        }
+       
+    }
+}
+
+.header-down{
+    background-color: $seventh-color;
+    width: 100%;
+    margin: 0 auto;
+    padding: 1rem 0;
+    ul {
+        display: flex;
+        align-items: center;
+        padding-left: 5.5rem;
+
+        li {
+            margin: 0 0.5rem;
+            font-weight: 400;
+            cursor: pointer;
+            position: relative;
+            font-size: 1rem;
+            font-family: $main-font;
+            color: rgba(0, 0, 0, 0.8);
+
+            &::before {
+                content: "";
+                position: absolute;
+                background-color: $second-color;
+                height: 1px;
+                width: 100%;
+                bottom: -0.5rem;
+                transform-origin: 100% 0;
+                transform: scaleX(0);
+                transition: transform 0.4s;
+            }
+
+            &:hover::before {
+                transform-origin: 0 0;
+                transform: scaleX(1);
+            }
+        
+        }
+    }
+}
+
+// SEARCHBOX
+
+.searchBox-wrapper {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    form {
+        width: 100%;
+        display: flex;
+        position: relative;
+        svg {
+            width: 30px;
+            right: 1rem;
+            top: 1.2rem;
+            position: absolute;
+        }
+    }
+
+    input {
+        width: 100%;
+        margin: 1rem auto;
+        border-radius: 2px;
+        border: 1px solid $third-color;
+        padding: 0.6rem;
+        background-color: $fourth-color;
+        transition: 0.2s ease-in-out;
+
+        &:focus {
+            transition: 0.2s ease-in-out;
+            background-color: white;
+            outline: none;
+        }
+    }
+   
+}
+
+
+.stop-scrolling{
+    overflow: hidden;
+}

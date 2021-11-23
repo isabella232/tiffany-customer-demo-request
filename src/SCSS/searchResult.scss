@@ -1,0 +1,168 @@
+@import './variables.scss';
+@import './mixin.scss';
+
+.searchResult-wrapper {
+    width: 100%;
+}
+
+.container {
+    width: 90%;
+    margin: 0 auto;
+    display: none;
+}
+
+.search-panel {
+    position: relative;
+}
+
+.hits-panel-wrapper {
+    width: 85% !important;
+    position: relative;
+    flex-grow: 2;
+    // width: 80%;
+    will-change: transform;
+    transform-origin: 100% 0;
+    width: 100%;
+    transition: transform 0.35s ease-in-out;
+}
+
+// VOICESEARCH
+
+.voiceSearch__wrapper{
+    position: relative;
+    .ais-VoiceSearch-button{
+        color: black;
+    }
+   
+}
+
+.ais-VoiceSearch-status {
+    display: none;
+}
+
+//SORT BY and STATS
+
+.sort-and-stat {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    margin: -1rem auto 2rem auto;
+    .ais-Stats-text {
+        color: $sixth-color;
+    }
+}
+.ais-SortBy-select {
+    @include btn;
+    .ais-SortBy-option {
+        color: $sixth-color;
+        @include title;
+    }
+}
+
+//SEARCHRESULT
+
+.hits-list {
+    @include hits-list;
+
+    .hit-list {
+        @include hit-list;
+    }
+}
+
+.searchPanel-results {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 100%;
+    margin: 3rem auto;
+    position: relative;
+
+    .filters-wrapper {
+        width: 20%;
+        will-change: width;
+        flex-shrink: 0;
+        overflow: visible;
+        display: inline-block;
+        // transition: width 350ms ease-in-out 0ms, opacity 0s ease-in-out;
+    }
+
+    .hits-wrapper {
+        width: 100%;
+    }
+}
+
+//SUGGESTIONS
+
+.suggestions-container {
+    display: flex;
+    justify-content: center;
+
+    .suggestion {
+        margin: 0.5rem 0;
+        border: solid 1px $third-color;
+        color: black;
+        border-radius: 3px;
+        padding: 0.5rem;
+        cursor: pointer;
+        p {
+            font-size: 0.8rem;
+            text-transform: capitalize;
+        }
+
+        &:hover {
+            @include btn-hover;
+        }
+    }
+}
+
+.active {
+    // display: block;
+    animation-name: fadeIn;
+    animation-duration: 0.3s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-in-out;
+    display: block;
+}
+
+.hidden {
+    // display: none;
+    animation-name: fadeOut;
+    animation-duration: 0.3s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-in-out;
+    display: none;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        visibility: hidden;
+        height: 0;
+    }
+    100% {
+        height: 100%;
+        opacity: 1;
+        visibility: visible;
+        display: block;
+    }
+}
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+        visibility: visible;
+        height: 100%;
+    }
+
+    90% {
+        opacity: 0;
+        visibility: hidden;
+    }
+
+    100% {
+    }
+}
+
+.no-results-hits {
+    margin-left: 3rem;
+}

@@ -1,0 +1,22 @@
+@import './variables.scss';
+
+.shopSelection{
+    border:none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    -ms-appearance: none; /* get rid of default appearance for IE8, 9 and 10*/
+    background-color: $seventh-color;
+    font-family: $main-font;
+    font-size: 0.8rem;
+    width: 100px;
+    cursor: pointer;
+
+    &:focus{
+        outline: none;
+    }
+
+}
+.shopChoice__icon{
+    width: 13px !important;
+}

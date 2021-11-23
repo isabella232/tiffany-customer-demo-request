@@ -1,0 +1,327 @@
+@import './mixin.scss';
+@import './variables.scss';
+
+// LEFT FILTERS
+
+.filters-content {
+    width: 100%;
+    .title {
+        cursor: pointer;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        h3 {
+            @include title;
+        }
+    }
+    .filter-list-content {
+        width: 100%;
+        .filter-list {
+            width: 100%;
+            p {
+                font-size: 16px;
+            }
+            .button-filter {
+                @include btn;
+                color: rgba(0, 0, 0, 0.8);
+                display: flex;
+                align-items: center;
+            }
+            .button-filter:hover {
+                @include btn-hover;
+            }
+        }
+    }
+    .line {
+        border-bottom: 1px solid $seventh-color;
+        width: 70%;
+        margin: 1em auto 1em auto;
+    }
+}
+
+.filterBtn {
+    display: -webkit-flex;
+    display: flex;
+    margin: -2.5rem 0;
+    cursor: pointer;
+    position: absolute;
+
+    :nth-child(1) {
+        margin-right: 0.5rem;
+    }
+
+    p {
+        font-size: 0.8rem;
+    }
+}
+
+// Current Refinement
+.refinement-content {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    width: fit-content;
+    margin: 0 auto;
+    height: auto;
+    transform: translateX(0%);
+    transform: translateY(-5rem);
+    z-index: 999;
+    .refinement-item {
+        display: flex;
+        align-items: center;
+        margin-bottom: -4em;
+        justify-content: center;
+        position: relative;
+        cursor: pointer;
+        a {
+            @include btn;
+        }
+        h3 {
+            @include title;
+        }
+        .refinement-results {
+            display: flex;
+            margin-left: 0.5rem;
+
+            li {
+                margin-left: 0.5rem;
+            }
+            .refinement-filter {
+                @include btn;
+                display: flex;
+                align-items: center;
+
+                span {
+                    margin-left: 0.5rem;
+                }
+            }
+        }
+    }
+
+    p {
+        color: $sixth-color;
+    }
+    .close-refinment {
+        margin-left: 0.5rem;
+    }
+}
+
+.refined-filter {
+    // border: 2px solid $second-color !important;
+    font-weight: bold;
+    background: linear-gradient(
+        163deg,
+        rgba(255, 255, 255, 1) 0%,
+        rgba(255, 255, 255, 1) 26%,
+        rgba(66, 232, 1, 0.201) 100%
+    );
+    transition: 0.1s ease-in-out;
+}
+
+.clearRefinement-btn {
+    // border-bottom: 1px solid $second-color;
+    font-family: $main-font;
+    font-size: 0.8rem;
+    background-color: transparent;
+    cursor: pointer;
+    margin-top: 1rem;
+    position: absolute;
+    font-style: italic;
+    z-index: -1;
+
+    &::before {
+        content: '';
+        position: absolute;
+        background-color: $second-color;
+        height: 1px;
+        width: 100%;
+        bottom: -0.5rem;
+        transform-origin: 100% 0;
+        transform: scaleX(0);
+        transition: transform 0.4s;
+    }
+
+    &:hover::before {
+        transform-origin: 0 0;
+        transform: scaleX(1);
+    }
+}
+
+.is-closed {
+    // width: 0 !important;
+    // overflow: hidden;
+    // opacity: 0;
+    // transition: width 350ms ease-in-out 0ms, opacity 0s ease-in-out;
+}
+
+.hideWrapperFilter {
+    animation: hideWrapper 0.5s 0s forwards ease-in-out;
+}
+
+.showWrapperFilter {
+    animation: showWrapper 0.5s 0s forwards ease-in-out;
+}
+
+.active-filters {
+    animation: fadeFilters 0.5s forwards ease-in-out;
+}
+
+.hidden-filters {
+    animation: fadeFiltersOut 0.5s forwards ease-in-out;
+}
+
+@keyframes hideWrapper {
+    0% {
+        // opacity: 1;
+        // transform: translate3d(0, 0, 0);
+        width: 20%;
+        overflow: visible;
+        opacity: 1;
+        flex-grow: 1;
+        transform: translate3d(0%, 0, 0);
+    }
+    80% {
+        opacity: 0;
+        // transform: translate3d(-100%, 0, 0);
+    }
+    100% {
+        opacity: 0;
+        // transform: translate3d(-100%, 0, 0);
+        width: 0;
+        overflow: hidden;
+        flex-grow: 0;
+    }
+}
+@keyframes showWrapper {
+    0% {
+        width: 0;
+        overflow: hidden;
+        opacity: 0;
+        flex-grow: 0;
+        // transform: translate3d(-150%, 0, 0);
+    }
+    100% {
+        // transform: translate3d(0%, 0, 0);
+        width: 20%;
+        overflow: visible;
+        opacity: 1;
+        flex-grow: 1;
+    }
+}
+
+@keyframes fadeFilters {
+    0% {
+        visibility: hidden;
+        opacity: 0;
+    }
+    100% {
+        visibility: visible;
+        opacity: 1;
+    }
+}
+
+@keyframes fadeFiltersOut {
+    0% {
+        visibility: visible;
+        opacity: 1;
+    }
+    100% {
+        visibility: hidden;
+        opacity: 0;
+        height: 0;
+    }
+}
+
+// Rheostat
+.DefaultBackground {
+    border: none !important;
+    background-color: $fourth-color !important;
+}
+
+.DefaultProgressBar_progressBar {
+    background-color: $seventh-color !important;
+}
+
+// FILTER SEARCH WITHIN
+// .filter-list-content {
+//     width: 100%;
+//     .filter-list {
+//       width: 100%;
+//       p {
+//         font-size: 16px;
+//       }
+//       .button-filter {
+//         text-decoration: none;
+//         border: 1px solid white;
+//         text-transform: capitalize;
+//         color: $sixth-color;
+//         width: 100%;
+//         display: flex;
+//         margin: 0.5rem 0;
+//         padding: 0.5rem 0.8rem;
+//         font-size: 0.8rem;
+//         font-weight: 300;
+//         transition: all 0.2s ease-in-out;
+//         cursor: pointer;
+//         border-radius: 30px;
+//         background-color: white;
+//         font-family: $main-font;
+//         &:hover{
+//           border: 1px solid $third-color;
+//         }
+//       }
+
+//     }
+//   }
+
+.search-facet-svg {
+    width: 30px;
+    right: 1rem;
+    top: 0;
+    position: relative;
+}
+
+.search-facet {
+    @include btn;
+    &:focus {
+        outline: none;
+    }
+    &:hover {
+        border: 1px solid $third-color;
+    }
+    &::placeholder {
+        font-size: 0.8rem;
+        position: relative;
+    }
+}
+
+.search-facet__hidden {
+    display: none;
+}
+
+.refinement-count {
+    color: $second-color;
+}
+
+.GuidedNavigation {
+    .GuidedNavigation-button {
+        display: flex;
+        justify-content: center;
+        margin-top: -1.7rem;
+        li {
+            button {
+                background-color: #f2f2f2;
+                border: #f2f2f2 1px solid;
+                padding: 0.5rem 0.5rem;
+                margin: 0 1rem 2rem 0;
+                cursor: pointer;
+                font-size: 0.8rem;
+                color: #2e2c2c;
+            }
+            button:hover {
+                border: $second-color 1px solid;
+                background-color: rgba(63, 193, 80, 0.1);
+            }
+        }
+    }
+}
