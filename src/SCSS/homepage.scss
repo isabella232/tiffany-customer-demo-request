@@ -1,5 +1,5 @@
 .homepage-wrapper {
-    width: 90% ;
+    width: 100%;
     margin: 0 auto;
     img,
     video {
@@ -7,14 +7,23 @@
     }
 }
 
-.footer{
-    img{
+.footer {
+    img {
         width: 100%;
     }
-   
 }
 
-.carouselHome{
+.carouselHome {
     width: 90%;
     margin: 5rem auto;
+}
+
+.home__images {
+    margin: 0;
+    padding: 0;
+    img {
+        width: 100%;
+        margin: 0;
+        padding: 0;
+    }
 }
