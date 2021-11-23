@@ -133,15 +133,43 @@ h2 {
     }
 }
 
-.search-bpx-container {
-    height: 250px;
+.search-box-container {
+    height: 100px;
+    padding: 0 1rem;
     display: flex;
     justify-content: space-around;
-    .search-bpx-container__searchBox {
+    .search-box-container__searchBox {
         width: 50%;
     }
-    .search-bpx-container__cross-infos {
+    .search-box-container__cross-infos {
         width: 50%;
+        justify-content: end;
+        display: flex;
+        padding-right: 1rem;
+        p {
+            cursor: pointer;
+            font-size: 1.5rem;
+        }
+    }
+}
+.container__infos {
+    display: flex;
+    justify-content: center;
+    text-align: end;
+    width: 33%;
+    margin-left: auto;
+    margin-right: 0;
+    text-align: end;
+    h3 {
+        font-size: 1.2rem;
+    }
+    p {
+        font-size: 0.9rem;
+        font-weight: 100;
+    }
+    .container__infos__text {
+        text-align: start;
+        margin-right: 2rem;
     }
 }
 

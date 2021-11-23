@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 
 // COMPONENT IMPORT
@@ -35,6 +35,9 @@ const Header = () => {
     );
     const { showModal } = useSelector(state => state.productDetail);
 
+    // Use State to search modal
+    const [searchModal, setSearchModal] = useState(false);
+
     if (federatedSearchVisibleSelector || showModal) {
         document.body.classList.add('stop-scrolling');
     } else {
@@ -47,7 +50,7 @@ const Header = () => {
                     <li></li>
                     <li
                         onClick={() => {
-                            console.log('EVENT');
+                            setSearchModal(true);
                         }}
                     >
                         <svg
@@ -245,20 +248,39 @@ const Header = () => {
                     <li>What's New</li>
                 </ul>
             </div>
-            <div className="search-bpx-container">
-                <div className="search-bpx-container__searchBox">
-                    <CustomSearchBox />
-                </div>
-                <div className="search-bpx-container__cross-infos">
-                    <p
-                        onClick={() => {
-                            console.log('Close');
-                        }}
-                    >
-                        X
-                    </p>
-                </div>
-            </div>
+            {searchModal ? (
+                <>
+                    <div className="search-box-container">
+                        <div className="search-box-container__searchBox">
+                            <CustomSearchBox />
+                        </div>
+                        <div className="search-box-container__cross-infos">
+                            <p
+                                onClick={() => {
+                                    setSearchModal(false);
+                                }}
+                            >
+                                X
+                            </p>
+                        </div>
+                    </div>
+                    <div className="container__infos">
+                        <div className="container__infos__text">
+                            <h3>Discover</h3>
+                            <p>Jewellery</p>
+                            <p>Gifts</p>
+                            <p>Store Locator</p>
+                        </div>
+                        <div className="container__infos__text">
+                            <h3>Need Help?</h3>
+                            <p>Contact Client Care</p>
+                            <p>Call 800 843 3269</p>
+                        </div>
+                    </div>
+                </>
+            ) : (
+                ''
+            )}
         </header>
     );
 };
