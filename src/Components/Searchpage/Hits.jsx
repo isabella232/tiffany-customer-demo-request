@@ -43,7 +43,7 @@ const Hits = ({ hits }) => {
                             }}
                         >
                             <div className="image-wrapper">
-                                <img src={hit.IMAGE} alt="" />
+                                <img src={hit.fullImage} alt="" />
                             </div>
                             <div className="weight__wrapper">
                                 <svg
@@ -71,16 +71,13 @@ const Hits = ({ hits }) => {
                             </div>
                             <div className="infos">
                                 <h3>
-                                    <Highlight
-                                        hit={hit}
-                                        attribute="DISPLAY_NAME"
-                                    />
+                                    <Highlight hit={hit} attribute="Title" />
                                 </h3>
                                 <p>{hit.BRAND}</p>
 
                                 <p>
                                     {hit.PRICE_INT !== null
-                                        ? `£ ${hit.PRICE_INT}`
+                                        ? `$ ${hit.price.shop_1}`
                                         : ''}
                                 </p>
                             </div>
@@ -111,17 +108,17 @@ const HitsModal = ({ hits }) => {
                         }}
                     >
                         <div className="image-wrapper">
-                            <img src={hit.IMAGE} alt="" />
+                            <img src={hit.fullImage} alt="" />
                         </div>
                         <p>{hit.SALES_UNIT}</p>
                         <div className="infos">
                             <h3>
-                                <Highlight hit={hit} attribute="DISPLAY_NAME" />
+                                <Highlight hit={hit} attribute="Title" />
                             </h3>
                             <p>{hit.BRAND}</p>
                             <p>
                                 {hit.PRICE_INT !== null
-                                    ? `£ ${hit.PRICE_INT}`
+                                    ? `$ ${hit.price.shop_1}`
                                     : ''}
                             </p>
                         </div>

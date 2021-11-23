@@ -3,9 +3,8 @@ import { useSelector, useDispatch } from 'react-redux';
 
 // COMPONENT IMPORT
 import logo from '../../Assets/Images/logo.png';
-import CustomSearchBox from '../Searchpage/SearchBox';
+// import CustomSearchBox from '../Searchpage/SearchBox';
 import SelectPersona from './Persona';
-import ShopChoice from './ShopChoice';
 import {
     searchVisible,
     federatedSearchVisible,
@@ -15,6 +14,9 @@ import {
 } from '../../actions/visibility';
 import { getQuery } from '../../actions/getQuery';
 import { guidedNavigation } from '../../actions/guidedNavigation';
+
+// Import Assets
+import headerRight from '../../Assets/Images/header-right.png';
 
 const Header = () => {
     const federatedSearchVisibleSelector = useSelector(
@@ -42,24 +44,48 @@ const Header = () => {
         <header className="header">
             <div className="header__up">
                 <ul>
+                    <li></li>
                     <li>
-                        <ShopChoice />
                         <svg
-                            className="shopChoice__icon"
-                            viewBox="0 0 38 50"
+                            width="25"
+                            height="29"
+                            viewBox="0 0 10 13"
                             fill="none"
                             xmlns="http://www.w3.org/2000/svg"
                         >
                             <path
-                                d="M19 0C8.5 0 0 8.5 0 19C0 38 19 50 19 50C19 50 38 38 38 19C38 8.5 29.5 0 19 0ZM19 26C15.1 26 12 22.9 12 19C12 15.1 15.1 12 19 12C22.9 12 26 15.1 26 19C26 22.9 22.9 26 19 26Z"
+                                d="M9.36655 8.96593L6.26905 5.86859C6.2714 5.86515 6.27249 5.8614 6.27452 5.85796C6.68265 5.32421 6.92827 4.65999 6.92827 3.93765C6.92827 2.18953 5.50593 0.767181 3.75796 0.767181C2.00999 0.767181 0.587646 2.18937 0.587646 3.93765C0.587646 5.68577 2.00999 7.10796 3.75796 7.10796C4.66702 7.10796 5.48593 6.72109 6.06452 6.10593L9.14577 9.18687C9.17624 9.21734 9.21624 9.23265 9.25624 9.23265C9.29624 9.23265 9.33624 9.21734 9.36671 9.18687C9.42765 9.12593 9.42765 9.02702 9.36655 8.96593ZM3.75796 6.79546C2.18218 6.79546 0.900147 5.51343 0.900147 3.93765C0.900147 2.36187 2.18218 1.07968 3.75796 1.07968C5.33374 1.07968 6.61577 2.36171 6.61577 3.93765C6.61577 5.51343 5.33374 6.79546 3.75796 6.79546Z"
                                 fill="black"
                             />
                         </svg>
                     </li>
                     <li>
-                        <p>Help center</p>
+                        <svg
+                            width="19"
+                            height="21"
+                            viewBox="0 0 8 12"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                        >
+                            <g clip-path="url(#clip0_617_7)">
+                                <path
+                                    fill-rule="evenodd"
+                                    clip-rule="evenodd"
+                                    d="M6.82385 1.03193C5.26287 -0.343977 2.73715 -0.343977 1.17618 1.03193C-0.266937 2.30396 -0.398951 4.33374 0.873597 5.74384L3.76318 8.94573C3.82161 9.01051 3.90844 9.048 4.00001 9.048C4.09158 9.048 4.17841 9.01051 4.23687 8.94573L7.12644 5.74384C8.39896 4.33374 8.26696 2.30396 6.82385 1.03193ZM1.60217 1.44004C2.92505 0.273987 5.07496 0.273987 6.39785 1.44004C7.60992 2.50839 7.71776 4.20268 6.65275 5.38285L4.00001 8.32232L1.34729 5.38285C0.282258 4.20268 0.39012 2.50839 1.60217 1.44004ZM3.07693 3.393C3.07693 2.92451 3.49022 2.54475 4.00001 2.54475C4.50982 2.54475 4.92309 2.92451 4.92309 3.393C4.92309 3.86149 4.50982 4.24125 4.00001 4.24125C3.49022 4.24125 3.07693 3.86149 3.07693 3.393ZM4.00001 1.97925C3.15035 1.97925 2.46155 2.61221 2.46155 3.393C2.46155 4.17379 3.15035 4.80675 4.00001 4.80675C4.84967 4.80675 5.53847 4.17379 5.53847 3.393C5.53847 2.61221 4.84967 1.97925 4.00001 1.97925Z"
+                                    fill="black"
+                                />
+                            </g>
+                            <defs>
+                                <clipPath id="clip0_617_7">
+                                    <rect
+                                        width="8"
+                                        height="11.31"
+                                        fill="white"
+                                    />
+                                </clipPath>
+                            </defs>
+                        </svg>
                     </li>
-                    <li className="register">Register</li>
                     <li>
                         <SelectPersona />
                         <svg
@@ -101,8 +127,6 @@ const Header = () => {
                         </svg>
                     </li>
                 </ul>
-            </div>
-            <div className="header-wrapper">
                 <div
                     className="list-img-wrapper"
                     onClick={() => {
@@ -125,6 +149,11 @@ const Header = () => {
                         }}
                     />
                 </div>
+                <div className="header-right">
+                    <img src={headerRight} alt="home" />
+                </div>
+            </div>
+            <div className="header-wrapper">
                 <div
                     className="search-wrapper"
                     onClick={e => {
@@ -141,7 +170,7 @@ const Header = () => {
                         }
                     }}
                 >
-                    <CustomSearchBox />
+                    {/* <CustomSearchBox /> */}
                 </div>
             </div>
             <div className="header-down">
@@ -156,7 +185,7 @@ const Header = () => {
                             dispatch(recipesPage(false));
                         }}
                     >
-                        Drinks
+                        Jewelery
                     </li>
                     <li
                         onClick={() => {
@@ -168,7 +197,7 @@ const Header = () => {
                             dispatch(recipesPage(false));
                         }}
                     >
-                        Fresh Food & Bakery
+                        Love & Engagement
                     </li>
                     <li
                         className="design"
@@ -181,7 +210,7 @@ const Header = () => {
                             dispatch(recipesPage(false));
                         }}
                     >
-                        Offers
+                        Watches
                     </li>
                     <li
                         onClick={() => {
@@ -193,7 +222,7 @@ const Header = () => {
                             dispatch(recipesPage(false));
                         }}
                     >
-                        Favourites
+                        Love & Engagement
                     </li>
                     <li
                         onClick={() => {
@@ -205,11 +234,13 @@ const Header = () => {
                             dispatch(getQuery(''));
                         }}
                     >
-                        Our recipes
+                        Watches
                     </li>
-                    <li>Delivery Pass</li>
-                    <li>RollBack</li>
-                    <li>Bonfire Night</li>
+                    <li>Home & Accessories</li>
+                    <li>Fragrance</li>
+                    <li>Men’s</li>
+                    <li>Gifts</li>
+                    <li>What's New</li>
                 </ul>
             </div>
         </header>
