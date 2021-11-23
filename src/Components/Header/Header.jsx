@@ -248,39 +248,41 @@ const Header = () => {
                     <li>What's New</li>
                 </ul>
             </div>
-            {searchModal ? (
-                <>
-                    <div className="search-box-container">
-                        <div className="search-box-container__searchBox">
-                            <CustomSearchBox />
-                        </div>
-                        <div className="search-box-container__cross-infos">
-                            <p
-                                onClick={() => {
-                                    setSearchModal(false);
-                                }}
-                            >
-                                X
-                            </p>
-                        </div>
+            <div
+                className={`${
+                    searchModal
+                        ? 'search-box-container-show'
+                        : 'search-box-container-hide'
+                }`}
+            >
+                <div className="search-box-container">
+                    <div className="search-box-container__searchBox">
+                        <CustomSearchBox />
                     </div>
-                    <div className="container__infos">
-                        <div className="container__infos__text">
-                            <h3>Discover</h3>
-                            <p>Jewellery</p>
-                            <p>Gifts</p>
-                            <p>Store Locator</p>
-                        </div>
-                        <div className="container__infos__text">
-                            <h3>Need Help?</h3>
-                            <p>Contact Client Care</p>
-                            <p>Call 800 843 3269</p>
-                        </div>
+                    <div className="search-box-container__cross-infos">
+                        <p
+                            onClick={() => {
+                                setSearchModal(false);
+                            }}
+                        >
+                            X
+                        </p>
                     </div>
-                </>
-            ) : (
-                ''
-            )}
+                </div>
+                <div className="container__infos">
+                    <div className="container__infos__text">
+                        <h3>Discover</h3>
+                        <p>Jewellery</p>
+                        <p>Gifts</p>
+                        <p>Store Locator</p>
+                    </div>
+                    <div className="container__infos__text">
+                        <h3>Need Help?</h3>
+                        <p>Contact Client Care</p>
+                        <p>Call 800 843 3269</p>
+                    </div>
+                </div>
+            </div>
         </header>
     );
 };

@@ -173,6 +173,39 @@ h2 {
     }
 }
 
+// Show hide modal with SB
+.search-box-container-show {
+    opacity: 1;
+    height: auto;
+    display: block;
+    animation: fadeIn 1s;
+}
+.search-box-container-hide {
+    transition: opacity 1s ease-out;
+    opacity: 0;
+    height: 0;
+    overflow: hidden;
+    animation: fadeOut 1s;
+} 
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
 // SEARCHBOX
 
 .searchBox-wrapper {
