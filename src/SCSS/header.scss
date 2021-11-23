@@ -1,6 +1,6 @@
 @import '../SCSS/variables.scss';
 
-h2{
+h2 {
     font-weight: 400;
     font-size: 2rem;
 }
@@ -100,15 +100,18 @@ h2{
         padding-left: 5.5rem;
 
         li {
-            margin: 0 1.5rem;
+            margin: 0 0.8rem;
             font-weight: 200;
             cursor: pointer;
             position: relative;
             font-size: 1rem;
             font-family: $main-font;
             color: rgba(0, 0, 0, 1);
-            transition: 0.5s ease-in-out;
+            text-align: center;
 
+            &:hover {
+                font-weight: 400;
+            }
             &::before {
                 content: '';
                 position: absolute;
@@ -124,12 +127,21 @@ h2{
             &:hover::before {
                 transform-origin: 0 0;
                 transform: scaleX(1);
-            }
-            &:hover {
                 font-weight: 400;
-                transition: 0.5s ease-in-out;
             }
         }
+    }
+}
+
+.search-bpx-container {
+    height: 250px;
+    display: flex;
+    justify-content: space-around;
+    .search-bpx-container__searchBox {
+        width: 50%;
+    }
+    .search-bpx-container__cross-infos {
+        width: 50%;
     }
 }
 

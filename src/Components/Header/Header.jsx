@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 
 // COMPONENT IMPORT
 import logo from '../../Assets/Images/logo.png';
-// import CustomSearchBox from '../Searchpage/SearchBox';
+import CustomSearchBox from '../Searchpage/SearchBox';
 import SelectPersona from './Persona';
 import {
     searchVisible,
@@ -45,7 +45,11 @@ const Header = () => {
             <div className="header__up">
                 <ul>
                     <li></li>
-                    <li>
+                    <li
+                        onClick={() => {
+                            console.log('EVENT');
+                        }}
+                    >
                         <svg
                             width="25"
                             height="29"
@@ -222,7 +226,7 @@ const Header = () => {
                             dispatch(recipesPage(false));
                         }}
                     >
-                        Love & Engagement
+                        Home & Accessories
                     </li>
                     <li
                         onClick={() => {
@@ -234,14 +238,26 @@ const Header = () => {
                             dispatch(getQuery(''));
                         }}
                     >
-                        Watches
+                        Fragrance
                     </li>
-                    <li>Home & Accessories</li>
-                    <li>Fragrance</li>
                     <li>Men’s</li>
                     <li>Gifts</li>
                     <li>What's New</li>
                 </ul>
+            </div>
+            <div className="search-bpx-container">
+                <div className="search-bpx-container__searchBox">
+                    <CustomSearchBox />
+                </div>
+                <div className="search-bpx-container__cross-infos">
+                    <p
+                        onClick={() => {
+                            console.log('Close');
+                        }}
+                    >
+                        X
+                    </p>
+                </div>
             </div>
         </header>
     );
