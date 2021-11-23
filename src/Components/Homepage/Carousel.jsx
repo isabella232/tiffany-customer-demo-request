@@ -24,6 +24,21 @@ export const CarouselLowPrice = () => {
     );
 };
 
+export const CarouselEngagement = () => {
+    const { persona } = useSelector(state => state.selectedPersona);
+    const searchClient = algoliasearch(window.appID, window.key);
+    return (
+        <InstantSearch indexName={window.index} searchClient={searchClient}>
+            <Configure
+                hitsPerPage={8}
+                ruleContexts="loveEngagement"
+                userToken={persona}
+            />
+            <CustomHitsModal />
+        </InstantSearch>
+    );
+};
+
 export const CarouselNoResults = () => {
     const searchClient = algoliasearch(window.appID, window.key);
     const { persona } = useSelector(state => state.selectedPersona);

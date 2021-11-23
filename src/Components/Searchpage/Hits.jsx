@@ -117,7 +117,7 @@ const HitsModal = ({ hits }) => {
                             </h3>
                             <p>{hit.BRAND}</p>
                             <p>
-                                {hit.PRICE_INT !== null
+                                {hit.price !== undefined
                                     ? `$ ${hit.price.shop_1}`
                                     : ''}
                             </p>

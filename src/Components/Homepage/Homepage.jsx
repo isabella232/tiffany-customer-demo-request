@@ -8,7 +8,7 @@ import img4 from '../../Assets/Images/img4.png';
 import img5 from '../../Assets/Images/img5.png';
 import footer from '../../Assets/Images/footer.png';
 
-import { CarouselHome, CarouselLowPrice } from './Carousel';
+import { CarouselHome, CarouselLowPrice, CarouselEngagement } from './Carousel';
 import CustomCarousel from './CustomCarousel';
 
 const Homepage = () => {
@@ -39,8 +39,8 @@ const Homepage = () => {
                     <img src={img3} alt="home" />
                 </div>
                 <div className="carouselHome">
-                    <h2>Our Products less than 5£</h2>
-                    <CarouselLowPrice />
+                    <h2>Love & Engagement</h2>
+                    <CarouselEngagement />
                 </div>
                 <div>
                     <img src={img3} alt="home" />
