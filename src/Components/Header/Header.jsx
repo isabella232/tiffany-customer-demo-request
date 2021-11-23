@@ -1,9 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 
 // COMPONENT IMPORT
 import logo from '../../Assets/Images/logo.png';
-// import CustomSearchBox from '../Searchpage/SearchBox';
+import CustomSearchBox from '../Searchpage/SearchBox';
 import SelectPersona from './Persona';
 import {
     searchVisible,
@@ -35,6 +35,9 @@ const Header = () => {
     );
     const { showModal } = useSelector(state => state.productDetail);
 
+    // Use State to search modal
+    const [searchModal, setSearchModal] = useState(false);
+
     if (federatedSearchVisibleSelector || showModal) {
         document.body.classList.add('stop-scrolling');
     } else {
@@ -45,7 +48,11 @@ const Header = () => {
             <div className="header__up">
                 <ul>
                     <li></li>
-                    <li>
+                    <li
+                        onClick={() => {
+                            setSearchModal(true);
+                        }}
+                    >
                         <svg
                             width="25"
                             height="29"
@@ -222,7 +229,7 @@ const Header = () => {
                             dispatch(recipesPage(false));
                         }}
                     >
-                        Love & Engagement
+                        Home & Accessories
                     </li>
                     <li
                         onClick={() => {
@@ -234,14 +241,47 @@ const Header = () => {
                             dispatch(getQuery(''));
                         }}
                     >
-                        Watches
+                        Fragrance
                     </li>
-                    <li>Home & Accessories</li>
-                    <li>Fragrance</li>
                     <li>Men’s</li>
                     <li>Gifts</li>
                     <li>What's New</li>
                 </ul>
+            </div>
+            <div
+                className={`${
+                    searchModal
+                        ? 'search-box-container-show'
+                        : 'search-box-container-hide'
+                }`}
+            >
+                <div className="search-box-container">
+                    <div className="search-box-container__searchBox">
+                        <CustomSearchBox />
+                    </div>
+                    <div className="search-box-container__cross-infos">
+                        <p
+                            onClick={() => {
+                                setSearchModal(false);
+                            }}
+                        >
+                            X
+                        </p>
+                    </div>
+                </div>
+                <div className="container__infos">
+                    <div className="container__infos__text">
+                        <h3>Discover</h3>
+                        <p>Jewellery</p>
+                        <p>Gifts</p>
+                        <p>Store Locator</p>
+                    </div>
+                    <div className="container__infos__text">
+                        <h3>Need Help?</h3>
+                        <p>Contact Client Care</p>
+                        <p>Call 800 843 3269</p>
+                    </div>
+                </div>
             </div>
         </header>
     );
