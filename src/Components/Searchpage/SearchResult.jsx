@@ -383,6 +383,42 @@ const ConfigureOnPages = () => {
                     hitsPerPage={21}
                 />
             );
+        case 'Necklace':
+            return (
+                <Configure
+                    userToken={persona}
+                    filters="ProductTypeDescription: 'Necklace'"
+                    enablePersonalization={true}
+                    hitsPerPage={21}
+                />
+            );
+        case 'Earrings':
+            return (
+                <Configure
+                    userToken={persona}
+                    filters="ProductTypeDescription: 'Earrings'"
+                    enablePersonalization={true}
+                    hitsPerPage={21}
+                />
+            );
+        case 'Ring':
+            return (
+                <Configure
+                    userToken={persona}
+                    filters="ProductTypeDescription: 'Ring'"
+                    enablePersonalization={true}
+                    hitsPerPage={21}
+                />
+            );
+        case 'Bracelet':
+            return (
+                <Configure
+                    userToken={persona}
+                    filters="ProductTypeDescription: 'Bracelet'"
+                    enablePersonalization={true}
+                    hitsPerPage={21}
+                />
+            );
         default:
             return '';
     }

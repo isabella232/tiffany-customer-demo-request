@@ -9,9 +9,6 @@ import {
     searchVisible,
     federatedSearchVisible,
     page,
-    catTwo,
-    catThree,
-    catFour,
     recipesPage
 } from '../../actions/visibility';
 import { getQuery } from '../../actions/getQuery';

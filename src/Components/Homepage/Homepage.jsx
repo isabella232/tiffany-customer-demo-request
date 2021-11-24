@@ -11,19 +11,16 @@ import footer from '../../Assets/Images/footer.png';
 
 import { CarouselHome, CarouselLowPrice, CarouselEngagement } from './Carousel';
 import CustomCarousel from './CustomCarousel';
+import CardsCategory from './CardsCategory';
 
 const Homepage = () => {
-    const { searchVisible, catOne, catTwo, recipesPage } = useSelector(
-        state => state.visibility
-    );
+    const { searchVisible, page } = useSelector(state => state.visibility);
     const { persona } = useSelector(state => state.selectedPersona);
     return (
         <>
             <div
                 className={`homepage-wrapper ${
-                    searchVisible || catOne || catTwo || recipesPage
-                        ? 'hidden'
-                        : 'active'
+                    searchVisible || page ? 'hidden' : 'active'
                 }`}
             >
                 {/* <div>
@@ -48,7 +45,7 @@ const Homepage = () => {
                 </div>
                 <div className="carouselHome">
                     <h2>Shop by Category</h2>
-                    <CarouselLowPrice />
+                    <CardsCategory />
                 </div>
                 <div>
                     <img src={img4} alt="home" />

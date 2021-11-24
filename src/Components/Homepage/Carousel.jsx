@@ -19,12 +19,12 @@ export const CarouselHome = () => {
 };
 
 export const CarouselLowPrice = () => {
-    const { persona } = useSelector(state => state.selectedPersona);
+    const searchClient = algoliasearch(window.appID, window.key);
     return (
-        <Index indexName={window.index} indexId="lowPrice_carousel">
-            <Configure ruleContexts="Low_Price" userToken={persona} distinct/>
+        <InstantSearch indexName={window.index} searchClient={searchClient}>
+            <Configure hitsPerPage={8} distinct />
             <CustomHitsModal />
-        </Index>
+        </InstantSearch>
     );
 };
 
@@ -35,7 +35,7 @@ export const CarouselEngagement = () => {
         <InstantSearch indexName={window.index} searchClient={searchClient}>
             <Configure
                 hitsPerPage={8}
-                ruleContexts="loveEngagement"
+                filters="categories.masterName: 'Love & Engagement'"
                 userToken={persona}
                 distinct
             />
@@ -49,7 +49,7 @@ export const CarouselNoResults = () => {
     const { persona } = useSelector(state => state.selectedPersona);
     return (
         <InstantSearch indexName={window.index} searchClient={searchClient}>
-            <Configure hitsPerPage={8} userToken={persona} distinct/>
+            <Configure hitsPerPage={8} userToken={persona} distinct />
             <CustomHitsModal />
         </InstantSearch>
     );
