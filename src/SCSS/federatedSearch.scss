@@ -17,7 +17,7 @@
     border-radius: 10px;
     border: 1px solid rgba(255, 255, 255, 0.18);
     padding: 2rem;
-    margin: 5rem auto 0rem auto;
+    margin: 0rem auto 0rem auto;
     overflow-x: hidden;
 
     .searchBox-wrapper {
@@ -61,7 +61,7 @@
 .container-federated {
     position: absolute;
     z-index: 999;
-    top: 0;
+    top: 5rem;
     left: 0;
     width: 100%;
     transform: translate(0%, 15%);
