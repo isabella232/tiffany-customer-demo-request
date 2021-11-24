@@ -28,12 +28,11 @@
 
 // VOICESEARCH
 
-.voiceSearch__wrapper{
+.voiceSearch__wrapper {
     position: relative;
-    .ais-VoiceSearch-button{
+    .ais-VoiceSearch-button {
         color: black;
     }
-   
 }
 
 .ais-VoiceSearch-status {
@@ -165,4 +164,21 @@
 
 .no-results-hits {
     margin-left: 3rem;
+}
+
+// Pagination
+.ais-Pagination-list{
+    margin: 2rem auto;
+    .ais-Pagination-item--selected {
+        .ais-Pagination-link {
+            background-color: $second-color;
+            border-color: $second-color;
+            color: white !important;
+        }
+    }
+    .ais-Pagination-item--page {
+        .ais-Pagination-link {
+            color: $second-color;
+        }
+    }
 }
