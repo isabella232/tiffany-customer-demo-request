@@ -13,7 +13,7 @@ import {
 import { CustomHits } from '../Searchpage/Hits';
 import CustomSuggestions from '../Searchpage/Suggestions';
 import { CarouselHome } from '../Homepage/Carousel';
-import RecipesSearch from './RecipesSearch';
+// import RecipesSearch from './RecipesSearch';
 import {
     federatedSearchVisible,
     searchVisible
@@ -30,13 +30,13 @@ const FederatedSearch = () => {
                 <div className="federatedSearch-recentSearches">
                     <RecentSearches />
                     <ContentInjected />
-                    {query ? (
+                    {/* {query ? (
                         <div className="recipes-content">
                             <RecipesSearch />
                         </div>
                     ) : (
                         ''
-                    )}
+                    )} */}
                 </div>
 
                 <div className="federatedSearch-products">

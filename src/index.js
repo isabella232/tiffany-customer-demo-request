@@ -37,7 +37,17 @@ window.indexSugg = 'Asda_v2_query_suggestions';
 // If you don't see facet display, ask the internal dashboard team to make sure you have the favet ordering feature enabled
 
 // ADD ATTRIBUTES FOR REFINEMENT LISTS TO THE ARRAY, IF NONE LEAVE ARRAY EMPTY
-window.refinementListAttributes = ['BRAND', 'SKU_SIZE'];
+window.refinementListAttributes = [
+    {
+        title: 'Categories',
+        refinement: 'categories.name',
+    },
+    { title: 'Carat', refinement: 'CaratWeight' },
+    {
+        title: 'Description',
+        refinement: 'ProductTypeDescription',
+    },
+];
 
 // ADD ATTRIBUTE FOR PRICE, IF NONE LEAVE AS EMPTY STRING
 window.priceAttribute = 'PRICE_INT';

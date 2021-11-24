@@ -39,6 +39,7 @@ const SearchBox = ({ refine, currentRefinement }) => {
                     value={query}
                     onChange={event => {
                         // dispatch(getQuery(event.currentTarget.value));
+                        dispatch(federatedSearchVisible(true));
                         refine(event.currentTarget.value);
                     }}
                     placeholder="Search..."

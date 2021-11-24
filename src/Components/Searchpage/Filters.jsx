@@ -269,8 +269,8 @@ const CustomFilters = ({ filterAnim }) => {
                     />
                     {window.refinementListAttributes.map((e, index) => (
                         <GenericRefinementList
-                            attribute={e}
-                            title={e}
+                            attribute={e.refinement}
+                            title={e.title}
                             searchable
                             key={index}
                         />

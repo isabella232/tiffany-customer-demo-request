@@ -8,7 +8,10 @@ export const CarouselHome = () => {
     const searchClient = algoliasearch(window.appID, window.key);
     return (
         <InstantSearch indexName={window.index} searchClient={searchClient}>
-            <Configure hitsPerPage={8} filters="" />
+            <Configure
+                hitsPerPage={8}
+                filters="categories.name: 'Gifts for Her'"
+            />
             <CustomHitsModal />
         </InstantSearch>
     );
