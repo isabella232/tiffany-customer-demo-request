@@ -76,7 +76,7 @@ const SearchResults = () => {
             recipesPage ? (
                 <div
                     className={`container-federated 
-                ${federatedvisble ? 'active' : 'hidden'}`}
+                ${federatedvisble && !searchVisible ? 'active' : 'hidden'}`}
                 >
                     <div
                         onClick={e => {
