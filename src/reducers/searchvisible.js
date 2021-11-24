@@ -1,8 +1,7 @@
 const initState = {
     searchVisible: null,
     federatedSearchVisible: false,
-    catOne: false,
-    catTwo: false,
+    page: null,
     homepage: true,
     recipesPage: false
 };
@@ -19,15 +18,10 @@ const visibility = (state = initState, action) => {
                 ...state,
                 federatedSearchVisible: action.payload
             };
-        case 'CAT_ONE':
+        case 'PAGE':
             return {
                 ...state,
-                catOne: action.payload
-            };
-        case 'CAT_TWO':
-            return {
-                ...state,
-                catTwo: action.payload
+                page: action.payload
             };
         case 'HOMEPAGE':
             return {

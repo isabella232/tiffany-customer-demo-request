@@ -29,7 +29,7 @@ window.index_asc = 'Asda_v2_price_asc';
 window.index_desc = 'Asda_v2_price_desc';
 
 // QUERY SUGG
-window.indexSugg = 'Asda_v2_query_suggestions';
+window.indexSugg = 'Tiffany_101_v3_query_suggestions';
 
 // DESCRIPTION ABOUT HOW THE FOLLOWING VARIABLES ARE USED
 // Please ensure you set your attributes in the following parts of the dashboard first:

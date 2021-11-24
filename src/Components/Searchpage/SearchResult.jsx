@@ -44,15 +44,9 @@ const SearchResults = () => {
 
     // REDUX STATE & ACTIONS
     const dispatch = useDispatch();
-    const {
-        searchVisible,
-        catTwo,
-        catOne,
-        catMens,
-        catKids,
-        homepage,
-        recipesPage
-    } = useSelector(state => state.visibility);
+    const { searchVisible, page, homepage, recipesPage } = useSelector(
+        state => state.visibility
+    );
     const federatedvisble = useSelector(
         state => state.visibility.federatedSearchVisible
     );
@@ -68,12 +62,7 @@ const SearchResults = () => {
 
     return (
         <div className="searchResult-wrapper">
-            {catOne ||
-            catTwo ||
-            catMens ||
-            catKids ||
-            homepage ||
-            recipesPage ? (
+            {page || homepage || recipesPage ? (
                 <div
                     className={`container-federated 
                 ${federatedvisble && !searchVisible ? 'active' : 'hidden'}`}
@@ -100,9 +89,7 @@ const SearchResults = () => {
             ) : null}
             <div
                 className={`container ${
-                    searchVisible || catOne || catTwo || recipesPage || catKids
-                        ? 'active'
-                        : 'hidden'
+                    searchVisible || page ? 'active' : 'hidden'
                 }`}
             >
                 <QueryRuleCustomData
@@ -126,33 +113,7 @@ const SearchResults = () => {
                     {!recipesPage ? (
                         <>
                             <div className="searchPanel-results">
-                                {catOne ? (
-                                    <Configure
-                                        userToken={persona}
-                                        filters="categories.lvl0:'drinks'"
-                                        enablePersonalization={true}
-                                        hitsPerPage={21}
-                                    />
-                                ) : (
-                                    ''
-                                )}
-                                {catTwo ? (
-                                    <Configure
-                                        userToken={persona}
-                                        filters="categories.lvl0:'Fresh food bakery'"
-                                        enablePersonalization={true}
-                                        hitsPerPage={21}
-                                    />
-                                ) : (
-                                    ''
-                                )}
-
-                                {/* {searchVisible ? ( <Configure
-                                userToken={persona}
-                                enablePersonalization={true}
-                                hitsPerPage={21}
-                                query={query}
-                            />): ('')} */}
+                                <ConfigureOnPages />
                                 <FilterBtn
                                     filterAnim={filterAnim}
                                     setFilterAnim={setFilterAnim}
@@ -345,5 +306,86 @@ const Results = connectStateResults(
             </div>
         )
 );
+
+const ConfigureOnPages = () => {
+    const { page } = useSelector(state => state.visibility);
+    const { persona } = useSelector(state => state.selectedPersona);
+    switch (page) {
+        case 'Jewelery':
+            return (
+                <Configure
+                    userToken={persona}
+                    filters="categories.masterName: 'Jewelry'"
+                    enablePersonalization={true}
+                    hitsPerPage={21}
+                />
+            );
+        case 'Love & Engagement':
+            return (
+                <Configure
+                    userToken={persona}
+                    filters="categories.masterName: 'Love & Engagement'"
+                    enablePersonalization={true}
+                    hitsPerPage={21}
+                />
+            );
+        case 'Watches':
+            return (
+                <Configure
+                    userToken={persona}
+                    filters="categories.masterName: 'Watches'"
+                    enablePersonalization={true}
+                    hitsPerPage={21}
+                />
+            );
+        case 'Home & Accessories':
+            return (
+                <Configure
+                    userToken={persona}
+                    filters="categories.masterName: 'Home & Accessories'"
+                    enablePersonalization={true}
+                    hitsPerPage={21}
+                />
+            );
+        case 'Fragrance':
+            return (
+                <Configure
+                    userToken={persona}
+                    filters="categories.masterName: 'Fragrance'"
+                    enablePersonalization={true}
+                    hitsPerPage={21}
+                />
+            );
+        case 'Men’s Jewelry':
+            return (
+                <Configure
+                    userToken={persona}
+                    filters="categories.name: 'Men’s Jewelry'"
+                    enablePersonalization={true}
+                    hitsPerPage={21}
+                />
+            );
+        case 'Gifts':
+            return (
+                <Configure
+                    userToken={persona}
+                    filters="categories.masterName: 'Gifts'"
+                    enablePersonalization={true}
+                    hitsPerPage={21}
+                />
+            );
+        case 'New Designs':
+            return (
+                <Configure
+                    userToken={persona}
+                    filters="categories.name: 'New Designs'"
+                    enablePersonalization={true}
+                    hitsPerPage={21}
+                />
+            );
+        default:
+            return '';
+    }
+};
 
 export default SearchResults;

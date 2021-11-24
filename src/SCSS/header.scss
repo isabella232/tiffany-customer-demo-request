@@ -54,6 +54,11 @@ h2 {
             justify-content: flex-start;
         }
     }
+    .list-img-wrapper {
+        img {
+            cursor: pointer;
+        }
+    }
 }
 
 .header-wrapper {
@@ -188,7 +193,7 @@ h2 {
     height: 0;
     overflow: hidden;
     animation: fadeOut 1s;
-} 
+}
 
 @keyframes fadeIn {
     from {

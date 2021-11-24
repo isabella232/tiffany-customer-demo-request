@@ -8,8 +8,10 @@ import SelectPersona from './Persona';
 import {
     searchVisible,
     federatedSearchVisible,
-    catOne,
+    page,
     catTwo,
+    catThree,
+    catFour,
     recipesPage
 } from '../../actions/visibility';
 import { getQuery } from '../../actions/getQuery';
@@ -146,9 +148,8 @@ const Header = () => {
                         alt="logo"
                         className="logo"
                         onClick={() => {
-                            dispatch(catOne(false));
+                            dispatch(page(null));
                             dispatch(searchVisible(false));
-                            dispatch(catTwo(false));
                             dispatch(federatedSearchVisible(false));
                             dispatch(guidedNavigation(false));
                             dispatch(getQuery(''));
@@ -184,9 +185,8 @@ const Header = () => {
                 <ul>
                     <li
                         onClick={() => {
-                            dispatch(catOne(true));
+                            dispatch(page('Jewelery'));
                             dispatch(searchVisible(false));
-                            dispatch(catTwo(false));
                             dispatch(federatedSearchVisible(false));
                             dispatch(getQuery(''));
                             dispatch(recipesPage(false));
@@ -196,9 +196,8 @@ const Header = () => {
                     </li>
                     <li
                         onClick={() => {
-                            dispatch(catOne(false));
+                            dispatch(page('Love & Engagement'));
                             dispatch(searchVisible(false));
-                            dispatch(catTwo(true));
                             dispatch(federatedSearchVisible(false));
                             dispatch(getQuery(''));
                             dispatch(recipesPage(false));
@@ -209,9 +208,8 @@ const Header = () => {
                     <li
                         className="design"
                         onClick={() => {
-                            dispatch(catOne(false));
+                            dispatch(page('Watches'));
                             dispatch(searchVisible(false));
-                            dispatch(catTwo(false));
                             dispatch(federatedSearchVisible(false));
                             dispatch(getQuery(''));
                             dispatch(recipesPage(false));
@@ -221,9 +219,8 @@ const Header = () => {
                     </li>
                     <li
                         onClick={() => {
-                            dispatch(catOne(false));
+                            dispatch(page('Home & Accessories'));
                             dispatch(searchVisible(false));
-                            dispatch(catTwo(false));
                             dispatch(federatedSearchVisible(false));
                             dispatch(getQuery(''));
                             dispatch(recipesPage(false));
@@ -233,19 +230,48 @@ const Header = () => {
                     </li>
                     <li
                         onClick={() => {
-                            dispatch(catOne(false));
+                            dispatch(page('Fragrance'));
                             dispatch(searchVisible(false));
-                            dispatch(catTwo(false));
-                            dispatch(recipesPage(true));
+                            dispatch(recipesPage(false));
                             dispatch(federatedSearchVisible(false));
                             dispatch(getQuery(''));
                         }}
                     >
                         Fragrance
                     </li>
-                    <li>Men’s</li>
-                    <li>Gifts</li>
-                    <li>What's New</li>
+                    <li
+                        onClick={() => {
+                            dispatch(page('Men’s Jewelry'));
+                            dispatch(searchVisible(false));
+                            dispatch(recipesPage(false));
+                            dispatch(federatedSearchVisible(false));
+                            dispatch(getQuery(''));
+                        }}
+                    >
+                        Men’s
+                    </li>
+                    <li
+                        onClick={() => {
+                            dispatch(page('Gifts'));
+                            dispatch(searchVisible(false));
+                            dispatch(recipesPage(false));
+                            dispatch(federatedSearchVisible(false));
+                            dispatch(getQuery(''));
+                        }}
+                    >
+                        Gifts
+                    </li>
+                    <li
+                        onClick={() => {
+                            dispatch(page('New Designs'));
+                            dispatch(searchVisible(false));
+                            dispatch(recipesPage(false));
+                            dispatch(federatedSearchVisible(false));
+                            dispatch(getQuery(''));
+                        }}
+                    >
+                        What's New
+                    </li>
                 </ul>
             </div>
             <div
