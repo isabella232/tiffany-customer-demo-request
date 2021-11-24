@@ -6,6 +6,7 @@ import img2 from '../../Assets/Images/img2.png';
 import img3 from '../../Assets/Images/img3.png';
 import img4 from '../../Assets/Images/img4.png';
 import img5 from '../../Assets/Images/img5.png';
+import img7 from '../../Assets/Images/img7.png';
 import footer from '../../Assets/Images/footer.png';
 
 import { CarouselHome, CarouselLowPrice, CarouselEngagement } from './Carousel';
@@ -43,7 +44,7 @@ const Homepage = () => {
                     <CarouselEngagement />
                 </div>
                 <div>
-                    <img src={img3} alt="home" />
+                    <img src={img7} alt="home" />
                 </div>
                 <div className="carouselHome">
                     <h2>Shop by Category</h2>

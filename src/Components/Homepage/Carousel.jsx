@@ -11,6 +11,7 @@ export const CarouselHome = () => {
             <Configure
                 hitsPerPage={8}
                 filters="categories.name: 'Gifts for Her'"
+                distinct
             />
             <CustomHitsModal />
         </InstantSearch>
@@ -21,7 +22,7 @@ export const CarouselLowPrice = () => {
     const { persona } = useSelector(state => state.selectedPersona);
     return (
         <Index indexName={window.index} indexId="lowPrice_carousel">
-            <Configure ruleContexts="Low_Price" userToken={persona} />
+            <Configure ruleContexts="Low_Price" userToken={persona} distinct/>
             <CustomHitsModal />
         </Index>
     );
@@ -36,6 +37,7 @@ export const CarouselEngagement = () => {
                 hitsPerPage={8}
                 ruleContexts="loveEngagement"
                 userToken={persona}
+                distinct
             />
             <CustomHitsModal />
         </InstantSearch>
@@ -47,7 +49,7 @@ export const CarouselNoResults = () => {
     const { persona } = useSelector(state => state.selectedPersona);
     return (
         <InstantSearch indexName={window.index} searchClient={searchClient}>
-            <Configure hitsPerPage={8} userToken={persona} />
+            <Configure hitsPerPage={8} userToken={persona} distinct/>
             <CustomHitsModal />
         </InstantSearch>
     );
