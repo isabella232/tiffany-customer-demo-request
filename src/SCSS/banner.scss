@@ -20,7 +20,7 @@
             width: 18rem;
             height: 2px;
             border-radius: 30px;
-            background-color: black;
+            background-color: $fourth-color;
             transform: translate(15rem, 3rem);
         }
     }
@@ -29,7 +29,7 @@
         position: absolute;
         height: 100%;
         width: 100%;
-        background: linear-gradient(163deg, rgba(0,0,0,1) 0%, rgba(255,159,8,0.6012780112044818) 58%);
+        background: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4));
         z-index: 10;
         top: 0;
         left: 0;
@@ -39,13 +39,8 @@
         z-index: 11;
         color: $fourth-color;
         font-size: 3rem;
-        background: -webkit-linear-gradient(163deg, rgba(0,0,0,1) 0%, rgba(6, 134, 17, 0.601) 58%);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
     }
     img {
-        width: 100%;
         object-fit: contain;
-        object-position: 0 -17rem;
     }
 }
