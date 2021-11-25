@@ -17,7 +17,7 @@ const SelectPersona = () => {
         input: styles => ({ width: '100%', cursor: 'pointer' }),
         container: styles => ({ width: '100%', cursor: 'pointer' }),
         valueContainer: styles => ({ backgroundColor: 'transparent', display: 'flex', justifyContent: 'center', alignItems: 'center', width: '100%', cursor: 'pointer' }),
-        placeholder: styles => ({ backgroundColor: 'transparent', fontSize: '0.8rem', color: 'black', fontFamily: "Open Sans", textTransform: 'capitalise', cursor: 'pointer' }),
+        placeholder: styles => ({ backgroundColor: 'transparent', fontSize: '0.8rem', color: 'black', fontFamily: 'Montserrat', textTransform: 'capitalise', cursor: 'pointer' }),
         indicatorSeparator: styles => ({ display: "none" }),
         dropdownIndicator: styles => ({ color: 'black', display: "none"}),
         singleValue: styles => ({ top: '0', width: '50%' }),
@@ -27,7 +27,7 @@ const SelectPersona = () => {
                 ...styles,
                 backgroundColor: isFocused ? 'black' : 'white',
                 color: isFocused ? 'white' : 'black',
-                fontSize: '0.8rem', fontFamily: "Open Sans", margin: '1rem',
+                fontSize: '0.8rem', fontFamily: "Montserrat", margin: '1rem',
                 transition: 'all 0.2s',
                 cursor: 'pointer',
                 width: '80%',
@@ -51,7 +51,7 @@ const SelectPersona = () => {
 
 
     return (
-        <Select options={options} onChange={selectValue}  styles={colourStyles} placeholder={"Persona"} />
+        <Select options={options} onChange={selectValue}  styles={colourStyles} placeholder={"Stores"} />
     )
 
 }
