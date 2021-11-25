@@ -124,12 +124,23 @@ const SearchResults = () => {
                                     setIsDynamicFactesOn={setIsDynamicFactesOn}
                                 />
                                 <div className="hits-panel-wrapper">
-                                    <Configure
-                                        userToken={persona}
-                                        enablePersonalization={true}
-                                        query={query}
-                                        hitsPerPage={21}
-                                    />
+                                    {query === 'gifts' ? (
+                                        <Configure
+                                            userToken={persona}
+                                            enablePersonalization={true}
+                                            filters="categories.name: 'Shop All Personalized Gifts'"
+                                            query={query}
+                                            hitsPerPage={21}
+                                        />
+                                    ) : (
+                                        <Configure
+                                            userToken={persona}
+                                            enablePersonalization={true}
+                                            query={query}
+                                            hitsPerPage={21}
+                                        />
+                                    )}
+
                                     <Results>
                                         <GuidedNavRefinementList
                                             attribute="flat_categories"
