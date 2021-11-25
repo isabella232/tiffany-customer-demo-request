@@ -1,49 +1,36 @@
 export const searchVisible = value => dispatch => {
     dispatch({
         type: 'SEARCHVISIBLE',
-        payload: value
+        payload: value,
     });
 };
 export const federatedSearchVisible = value => dispatch => {
     dispatch({
         type: 'FEDERATEDSEARCH_VISIBLE',
-        payload: value
+        payload: value,
     });
 };
 export const page = value => dispatch => {
     dispatch({
         type: 'PAGE',
-        payload: value
+        payload: value,
     });
 };
-// export const catTwo = value => dispatch => {
-//     dispatch({
-//         type: 'CAT_TWO',
-//         payload: value
-//     });
-// };
-// export const catThree = value => dispatch => {
-//     dispatch({
-//         type: 'CAT_THREE',
-//         payload: value
-//     });
-// };
-// export const catFour = value => dispatch => {
-//     dispatch({
-//         type: 'CAT_FOUR',
-//         payload: value
-//     });
-// };
-
+export const showModal = value => dispatch => {
+    dispatch({
+        type: 'SHOW_MODAL',
+        payload: value,
+    });
+};
 export const homepage = value => dispatch => {
     dispatch({
         type: 'HOMEPAGE',
-        payload: value
+        payload: value,
     });
 };
 export const recipesPage = value => dispatch => {
     dispatch({
         type: 'RECIPES_PAGE',
-        payload: value
+        payload: value,
     });
 };

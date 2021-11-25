@@ -1,5 +1,5 @@
-import React from 'react';
-import { useSelector } from 'react-redux';
+import React, { useState } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
 
 // IMPORT ASSET
 import img2 from '../../Assets/Images/img2.png';
@@ -9,13 +9,21 @@ import img5 from '../../Assets/Images/img5.png';
 import img7 from '../../Assets/Images/img7.png';
 import footer from '../../Assets/Images/footer.png';
 
-import { CarouselHome, CarouselLowPrice, CarouselEngagement } from './Carousel';
-import CustomCarousel from './CustomCarousel';
+// Import actions
+import { showModal } from '../../actions/visibility';
+
+import { CarouselHome, CarouselEngagement } from './Carousel';
 import CardsCategory from './CardsCategory';
+import CustomSearchBox from '../Searchpage/SearchBox';
 
 const Homepage = () => {
-    const { searchVisible, page } = useSelector(state => state.visibility);
-    const { persona } = useSelector(state => state.selectedPersona);
+    const dispatch = useDispatch();
+    const { searchVisible, page, getShowModal } = useSelector(
+        state => state.visibility
+    );
+    // Use State to search modal
+    // const [searchModal, setSearchModal] = useState(false);
+    // const { persona } = useSelector(state => state.selectedPersona);
     return (
         <>
             <div
@@ -23,9 +31,41 @@ const Homepage = () => {
                     searchVisible || page ? 'hidden' : 'active'
                 }`}
             >
-                {/* <div>
-                <img src={headerBand} alt="home" />
-            </div> */}
+                {/* <div
+                    className={`${
+                        getShowModal
+                            ? 'search-box-container-show'
+                            : 'search-box-container-hide'
+                    }`}
+                >
+                    <div className="search-box-container">
+                        <div className="search-box-container__searchBox">
+                            <CustomSearchBox />
+                        </div>
+                        <div className="search-box-container__cross-infos">
+                            <p
+                                onClick={() => {
+                                    dispatch(showModal(false));
+                                }}
+                            >
+                                X
+                            </p>
+                        </div>
+                    </div>
+                    <div className="container__infos">
+                        <div className="container__infos__text">
+                            <h3>Discover</h3>
+                            <p>Jewellery</p>
+                            <p>Gifts</p>
+                            <p>Store Locator</p>
+                        </div>
+                        <div className="container__infos__text">
+                            <h3>Need Help?</h3>
+                            <p>Contact Client Care</p>
+                            <p>Call 800 843 3269</p>
+                        </div>
+                    </div>
+                </div> */}
                 <div>
                     <img src={img2} alt="home" />
                 </div>

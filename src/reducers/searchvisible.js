@@ -3,7 +3,8 @@ const initState = {
     federatedSearchVisible: false,
     page: null,
     homepage: true,
-    recipesPage: false
+    recipesPage: false,
+    getShowModal: false
 };
 
 const visibility = (state = initState, action) => {
@@ -32,6 +33,11 @@ const visibility = (state = initState, action) => {
             return {
                 ...state,
                 recipesPage: action.payload
+            };
+        case 'SHOW_MODAL':
+            return {
+                ...state,
+                getShowModal: action.payload
             };
         default:
             return { ...state };

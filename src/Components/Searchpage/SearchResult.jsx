@@ -131,6 +131,7 @@ const SearchResults = () => {
                                             filters="categories.name: 'Shop All Personalized Gifts'"
                                             query={query}
                                             hitsPerPage={21}
+                                            distinct
                                         />
                                     ) : (
                                         <Configure
@@ -138,6 +139,7 @@ const SearchResults = () => {
                                             enablePersonalization={true}
                                             query={query}
                                             hitsPerPage={21}
+                                            distinct
                                         />
                                     )}
 

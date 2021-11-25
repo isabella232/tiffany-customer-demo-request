@@ -3,13 +3,13 @@ import { useSelector, useDispatch } from 'react-redux';
 
 // COMPONENT IMPORT
 import logo from '../../Assets/Images/logo.png';
-import CustomSearchBox from '../Searchpage/SearchBox';
 import SelectPersona from './Persona';
 import {
     searchVisible,
     federatedSearchVisible,
     page,
-    recipesPage
+    recipesPage,
+    showModal
 } from '../../actions/visibility';
 import { getQuery } from '../../actions/getQuery';
 import { guidedNavigation } from '../../actions/guidedNavigation';
@@ -32,10 +32,6 @@ const Header = () => {
     const searchVisibleSelector = useSelector(
         state => state.visibility.searchVisible
     );
-    const { showModal } = useSelector(state => state.productDetail);
-
-    // Use State to search modal
-    const [searchModal, setSearchModal] = useState(false);
 
     if (federatedSearchVisibleSelector || showModal) {
         document.body.classList.add('stop-scrolling');
@@ -49,7 +45,7 @@ const Header = () => {
                     <li></li>
                     <li
                         onClick={() => {
-                            setSearchModal(true);
+                            dispatch(showModal(true));
                         }}
                     >
                         <svg
@@ -270,41 +266,6 @@ const Header = () => {
                         What's New
                     </li>
                 </ul>
-            </div>
-            <div
-                className={`${
-                    searchModal
-                        ? 'search-box-container-show'
-                        : 'search-box-container-hide'
-                }`}
-            >
-                <div className="search-box-container">
-                    <div className="search-box-container__searchBox">
-                        <CustomSearchBox />
-                    </div>
-                    <div className="search-box-container__cross-infos">
-                        <p
-                            onClick={() => {
-                                setSearchModal(false);
-                            }}
-                        >
-                            X
-                        </p>
-                    </div>
-                </div>
-                <div className="container__infos">
-                    <div className="container__infos__text">
-                        <h3>Discover</h3>
-                        <p>Jewellery</p>
-                        <p>Gifts</p>
-                        <p>Store Locator</p>
-                    </div>
-                    <div className="container__infos__text">
-                        <h3>Need Help?</h3>
-                        <p>Contact Client Care</p>
-                        <p>Call 800 843 3269</p>
-                    </div>
-                </div>
             </div>
         </header>
     );
