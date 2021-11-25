@@ -47,7 +47,6 @@ const Header = () => {
         <header className="header">
             <div className="header__up">
                 <ul>
-                    <li></li>
                     <li
                         onClick={() => {
                             setSearchModal(true);
