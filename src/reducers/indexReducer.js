@@ -1,5 +1,5 @@
 import { combineReducers } from "redux";
-import selectedPersona from "./selectedOption";
+import selectedStore from "./selectedOption";
 import visibility from "./searchvisible";
 import getQuery from "./getQuery";
 import productDetail from "./productDetail";
@@ -7,7 +7,7 @@ import selectShop from "./selectShop";
 import guidedNavigationTags from "./guidedNavigation";
 
 const rootReducer = combineReducers({
-    selectedPersona: selectedPersona,
+    selectedStore: selectedStore,
     visibility: visibility,
     getQuery: getQuery,
     productDetail: productDetail,
