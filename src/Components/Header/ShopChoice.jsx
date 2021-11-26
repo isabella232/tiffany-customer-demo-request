@@ -4,6 +4,7 @@ import { connectMenu } from 'react-instantsearch-dom';
 import { selectShop } from '../../actions/selectShop';
 
 const MenuSelect = ({ items, currentRefinement, refine }) => {
+    console.log('items', items);
     const dispatch = useDispatch();
     return (
         <select
@@ -30,7 +31,9 @@ const MenuSelect = ({ items, currentRefinement, refine }) => {
 const ShopDropdown = connectMenu(MenuSelect);
 
 const ShopChoice = () => {
-    return <ShopDropdown attribute="shop_availability" />;
+    return (
+        <ShopDropdown attribute="storeName" limit={150} sortBy="label:asc" />
+    );
 };
 
 export default ShopChoice;
