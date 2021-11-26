@@ -82,7 +82,6 @@ const CustomSearchBox = connectSearchBox(SearchBox);
 const StateResults = ({ searchState }) => {
     const dispatch = useDispatch();
     useEffect(() => {
-        console.log(searchState.query);
         dispatch(getQuery(searchState.query));
     }, [searchState.query]);
     return null;
