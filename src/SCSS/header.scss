@@ -254,3 +254,12 @@ h2 {
 .stop-scrolling {
     overflow: hidden;
 }
+
+.shop-search{
+    margin-left: 1rem;
+    input{
+        border: $heigth-color 1px solid;
+        border-radius: 8px;
+        padding: 0.2rem;
+    }
+}
