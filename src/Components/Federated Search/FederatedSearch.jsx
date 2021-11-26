@@ -103,15 +103,18 @@ const RecentSearches = () => {
 };
 
 const InjectedContent = ({ items }) => {
+    console.log('InjectedContent', items);
     return (
         <div className="injectedContent__wrapper">
-            {items.map(({ button, img, target, titleContent }) => {
-                if (titleContent) {
+            {items.map(({ button, image, target, value }) => {
+                if (button) {
                     return (
                         <div className="injected-content">
-                            <img src={img} alt={titleContent} />
-                            <h3>{titleContent}</h3>
-                            <a href={target}>{button}</a>
+                            <img src={image} alt={value} />
+                            <h3>{value}</h3>
+                            <a href={target} target="_blank">
+                                {button}
+                            </a>
                         </div>
                     );
                 }
