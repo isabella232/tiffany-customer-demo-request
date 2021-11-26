@@ -25,8 +25,8 @@ window.index = 'Tiffany_101_v3';
 window.recipeIndex = 'Asda_recipes';
 
 //SORTBY
-window.index_asc = 'Asda_v2_price_asc';
-window.index_desc = 'Asda_v2_price_desc';
+window.index_asc = 'Tiffany_101_v3_price_asc';
+window.index_desc = 'Tiffany_101_v3_price_desc';
 
 // QUERY SUGG
 window.indexSugg = 'Tiffany_101_v3_query_suggestions';
