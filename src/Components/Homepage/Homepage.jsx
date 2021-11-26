@@ -10,12 +10,10 @@ import img7 from '../../Assets/Images/img7.png';
 import footer from '../../Assets/Images/footer.png';
 
 import { CarouselHome, CarouselLowPrice, CarouselEngagement } from './Carousel';
-import CustomCarousel from './CustomCarousel';
 import CardsCategory from './CardsCategory';
 
 const Homepage = () => {
     const { searchVisible, page } = useSelector(state => state.visibility);
-    const { persona } = useSelector(state => state.selectedPersona);
     return (
         <>
             <div
