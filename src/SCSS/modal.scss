@@ -48,10 +48,6 @@
     border-radius: 3px;
 }
 
-
-  
-
-
 .close-modal {
     position: absolute;
     right: 2rem;
@@ -64,7 +60,6 @@
     width: 45%;
     display: flex;
     align-items: center;
-   
 }
 
 .modal-images {
@@ -78,11 +73,17 @@
 }
 
 .modal-infos {
-    width: 50%;
+    width: 40%;
 
-    h3,
+    h3 {
+        margin: 1rem 0;
+        font-weight: 400;
+        font-size: 18px;
+        text-decoration: underline;
+    }
     p {
         margin: 1rem 0;
+        font-weight: 100;
     }
 
     .btn-modal {
@@ -104,61 +105,68 @@
             color: $heigth-color;
         }
         .modal-infos__grame-prod__gram {
-            color: $heigth-color;
+            color: $main-color;
         }
     }
 
-    .modal-infos__grame-prod__price__wp{
+    .modal-infos__grame-prod__price__wp {
         display: flex;
         align-items: center;
         justify-content: space-between;
-    }
-    
-        .modal-infos__grame-prod__prices__buttons {
+        background-color: $main-color;
+        .modal-infos__grame-prod__prices {
             display: flex;
-            justify-content: space-evenly;
-            gap: 1rem;
-            
-            .modal-infos__grame-prod__prices__buttons__green {
-               @include btn;
-               display: flex;
-               justify-content: center;
-               align-items: center;
-               color: white;
-               background-color: $second-color;
-               
+            justify-content: center;
+            .modal-infos__grame-prod__prices__price {
+                color: $third-color !important;
+                font-weight: 600 !important;
+                font-size: 1.5rem;
             }
-            .modal-infos__grame-prod__prices__buttons__white {
-                @include btn;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                color: $second-color;
-                
-                svg {
-                    margin-right: 1rem;
-                }
-            }
-            .modal-infos__grame-prod__prices__buttons__green:hover {
-                background-color: white;
-                color: green;
-                border: $second-color solid 1px;
-                transition: 0.2s ease-in-out;
-            }
-        
-        .modal-infos__grame-prod__prices__price {
+        }
+    }
+
+    .modal-infos__grame-prod__prices__buttons {
+        display: flex;
+        justify-content: space-evenly;
+        gap: 1rem;
+
+        .modal-infos__grame-prod__prices__buttons__green {
+            @include btn;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            background-color: $second-color;
+        }
+        .modal-infos__grame-prod__prices__buttons__white {
+            @include btn;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             color: $second-color;
+
+            svg {
+                margin-right: 1rem;
+            }
+        }
+        .modal-infos__grame-prod__prices__buttons__green:hover {
+            background-color: white;
+            color: green;
+            border: $second-color solid 1px;
+            transition: 0.2s ease-in-out;
+        }
+
+        .modal-infos__grame-prod__prices__price {
             font-size: 2em;
             font-weight: bold;
         }
-       
     }
     .line {
         border-bottom: 1px solid $heigth-color;
         width: 100%;
     }
 
-    .modal-infos__grame-prod__wp{
+    .modal-infos__grame-prod__wp {
         width: 10rem;
     }
     .modal-infos__grame-prod__img {

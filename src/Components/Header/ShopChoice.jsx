@@ -9,6 +9,7 @@ const MenuSelect = ({ items, currentRefinement, refine }) => {
         <div className="shop-search">
             <input
                 list="brow"
+                type="search"
                 onChange={e => {
                     refine(e.currentTarget.value);
                     dispatch(selectShop(e.currentTarget.value));
@@ -33,7 +34,12 @@ const ShopDropdown = connectMenu(MenuSelect);
 
 const ShopChoice = () => {
     return (
-        <ShopDropdown attribute="storeName" limit={150} sortBy="label:asc" />
+        <ShopDropdown
+            attribute="storeName"
+            limit={150}
+            sortBy="label:asc"
+            searchable={true}
+        />
     );
 };
 
