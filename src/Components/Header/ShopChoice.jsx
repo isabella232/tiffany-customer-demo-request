@@ -6,16 +6,16 @@ import { selectShop } from '../../actions/selectShop';
 const MenuSelect = ({ items, currentRefinement, refine }) => {
     const dispatch = useDispatch();
     return (
-        <div>
+        <div className="shop-search">
             <input
                 list="brow"
                 onChange={e => {
                     refine(e.currentTarget.value);
                     dispatch(selectShop(e.currentTarget.value));
                 }}
+                placeholder="Shop by location"
             />
             <datalist id="brow">
-                <option value="Shop by location" />
                 {items.map(item => (
                     <option
                         key={item.label}
@@ -38,27 +38,3 @@ const ShopChoice = () => {
 };
 
 export default ShopChoice;
-
-{
-    /* <select
-value={currentRefinement || ''}
-onChange={event => {
-    refine(event.currentTarget.value);
-    dispatch(selectShop(event.currentTarget.value));
-}}
-className="shopSelection"
->
-<input list="shops" name="shopsName" />
-<datalist id="shops">
-    <option value="">Shop by location</option>
-    {items.map(item => (
-        <option
-            key={item.label}
-            value={item.isRefined ? currentRefinement : item.value}
-        >
-            {item.label}
-        </option>
-    ))}
-</datalist>
-</select> */
-}
