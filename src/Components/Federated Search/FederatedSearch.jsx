@@ -21,7 +21,7 @@ import {
 import { getQuery } from '../../actions/getQuery';
 
 const FederatedSearch = () => {
-    const { persona } = useSelector(state => state.selectedPersona);
+    // const { persona } = useSelector(state => state.selectedPersona);
     const { shop } = useSelector(state => state.selectShop);
     const { query } = useSelector(state => state.getQuery);
     return (
@@ -47,7 +47,7 @@ const FederatedSearch = () => {
                     </div>
                     <Configure
                         hitsPerPage={6}
-                        userToken={persona}
+                        // userToken={persona}
                         filters={shop ? `shop_availability:'${shop}'` : ''}
                     />
                     <Results>
@@ -59,7 +59,10 @@ const FederatedSearch = () => {
                         <h3>Suggestions</h3>
                     </ResultsTitle>
                     <Index indexName={window.indexSugg} indexId="suggestions">
-                        <Configure hitsPerPage={6} userToken={persona} />
+                        <Configure
+                            hitsPerPage={6}
+                            // userToken={persona}
+                        />
                         <CustomSuggestions />
                     </Index>
                 </div>

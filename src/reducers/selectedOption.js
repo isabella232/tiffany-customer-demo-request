@@ -1,14 +1,14 @@
 const initState = {
-    persona: null,
+    store: null,
     guidedNavigation: false
 };
 
-const selectedPersona = (state = initState, action) => {
+const selectedStore = (state = initState, action) => {
     switch (action.type) {
-        case 'SELECTPERSONA':
+        case 'SELECT_STORE':
             return {
                 ...state,
-                persona: action.payload
+                store: action.payload
             };
         case 'GUIDEDNAVIGATION':
             return {
@@ -20,4 +20,4 @@ const selectedPersona = (state = initState, action) => {
     }
 };
 
-export default selectedPersona;
+export default selectedStore;

@@ -16,25 +16,6 @@ export const page = value => dispatch => {
         payload: value
     });
 };
-// export const catTwo = value => dispatch => {
-//     dispatch({
-//         type: 'CAT_TWO',
-//         payload: value
-//     });
-// };
-// export const catThree = value => dispatch => {
-//     dispatch({
-//         type: 'CAT_THREE',
-//         payload: value
-//     });
-// };
-// export const catFour = value => dispatch => {
-//     dispatch({
-//         type: 'CAT_FOUR',
-//         payload: value
-//     });
-// };
-
 export const homepage = value => dispatch => {
     dispatch({
         type: 'HOMEPAGE',

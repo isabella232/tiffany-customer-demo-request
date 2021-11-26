@@ -53,8 +53,8 @@ const SearchResults = () => {
 
     const { query } = useSelector(state => state.getQuery);
     const { showModal } = useSelector(state => state.productDetail);
-    const { persona } = useSelector(state => state.selectedPersona);
-    const { guidedNavigation } = useSelector(state => state.selectedPersona);
+    // const { persona } = useSelector(state => state.selectedPersona);
+    const { guidedNavigation } = useSelector(state => state.selectedStore);
 
     // REACT STATE
     const [filterAnim, setFilterAnim] = useState(true);
@@ -124,13 +124,14 @@ const SearchResults = () => {
                                     setIsDynamicFactesOn={setIsDynamicFactesOn}
                                 />
                                 <div className="hits-panel-wrapper">
-                                    {query === 'gifts' ? (
+                                    {/* {query === 'gifts' ? (
                                         <Configure
                                             userToken={persona}
                                             enablePersonalization={true}
                                             filters="categories.name: 'Shop All Personalized Gifts'"
                                             query={query}
                                             hitsPerPage={21}
+                                            distinct
                                         />
                                     ) : (
                                         <Configure
@@ -138,8 +139,16 @@ const SearchResults = () => {
                                             enablePersonalization={true}
                                             query={query}
                                             hitsPerPage={21}
+                                            distinct
                                         />
-                                    )}
+                                    )} */}
+                                    <Configure
+                                        // userToken={persona}
+                                        enablePersonalization={true}
+                                        query={query}
+                                        hitsPerPage={21}
+                                        distinct
+                                    />
 
                                     <Results>
                                         <GuidedNavRefinementList
@@ -320,12 +329,12 @@ const Results = connectStateResults(
 
 const ConfigureOnPages = () => {
     const { page } = useSelector(state => state.visibility);
-    const { persona } = useSelector(state => state.selectedPersona);
+    // const { persona } = useSelector(state => state.selectedPersona);
     switch (page) {
         case 'Jewelery':
             return (
                 <Configure
-                    userToken={persona}
+                    // userToken={persona}
                     filters="categories.masterName: 'Jewelry'"
                     enablePersonalization={true}
                     hitsPerPage={21}
@@ -334,7 +343,7 @@ const ConfigureOnPages = () => {
         case 'Love & Engagement':
             return (
                 <Configure
-                    userToken={persona}
+                    // userToken={persona}
                     filters="categories.masterName: 'Love & Engagement'"
                     enablePersonalization={true}
                     hitsPerPage={21}
@@ -343,7 +352,7 @@ const ConfigureOnPages = () => {
         case 'Watches':
             return (
                 <Configure
-                    userToken={persona}
+                    // userToken={persona}
                     filters="categories.masterName: 'Watches'"
                     enablePersonalization={true}
                     hitsPerPage={21}
@@ -352,7 +361,7 @@ const ConfigureOnPages = () => {
         case 'Home & Accessories':
             return (
                 <Configure
-                    userToken={persona}
+                    // userToken={persona}
                     filters="categories.masterName: 'Home & Accessories'"
                     enablePersonalization={true}
                     hitsPerPage={21}
@@ -361,7 +370,7 @@ const ConfigureOnPages = () => {
         case 'Fragrance':
             return (
                 <Configure
-                    userToken={persona}
+                    // userToken={persona}
                     filters="categories.masterName: 'Fragrance'"
                     enablePersonalization={true}
                     hitsPerPage={21}
@@ -370,7 +379,7 @@ const ConfigureOnPages = () => {
         case 'Men’s Jewelry':
             return (
                 <Configure
-                    userToken={persona}
+                    // userToken={persona}
                     filters="categories.name: 'Men’s Jewelry'"
                     enablePersonalization={true}
                     hitsPerPage={21}
@@ -379,7 +388,7 @@ const ConfigureOnPages = () => {
         case 'Gifts':
             return (
                 <Configure
-                    userToken={persona}
+                    // userToken={persona}
                     filters="categories.masterName: 'Gifts'"
                     enablePersonalization={true}
                     hitsPerPage={21}
@@ -388,7 +397,7 @@ const ConfigureOnPages = () => {
         case 'New Designs':
             return (
                 <Configure
-                    userToken={persona}
+                    // userToken={persona}
                     filters="categories.name: 'New Designs'"
                     enablePersonalization={true}
                     hitsPerPage={21}
@@ -397,7 +406,7 @@ const ConfigureOnPages = () => {
         case 'Necklace':
             return (
                 <Configure
-                    userToken={persona}
+                    // userToken={persona}
                     filters="ProductTypeDescription: 'Necklace'"
                     enablePersonalization={true}
                     hitsPerPage={21}
@@ -406,7 +415,7 @@ const ConfigureOnPages = () => {
         case 'Earrings':
             return (
                 <Configure
-                    userToken={persona}
+                    // userToken={persona}
                     filters="ProductTypeDescription: 'Earrings'"
                     enablePersonalization={true}
                     hitsPerPage={21}
@@ -415,7 +424,7 @@ const ConfigureOnPages = () => {
         case 'Ring':
             return (
                 <Configure
-                    userToken={persona}
+                    // userToken={persona}
                     filters="ProductTypeDescription: 'Ring'"
                     enablePersonalization={true}
                     hitsPerPage={21}
@@ -424,7 +433,7 @@ const ConfigureOnPages = () => {
         case 'Bracelet':
             return (
                 <Configure
-                    userToken={persona}
+                    // userToken={persona}
                     filters="ProductTypeDescription: 'Bracelet'"
                     enablePersonalization={true}
                     hitsPerPage={21}
