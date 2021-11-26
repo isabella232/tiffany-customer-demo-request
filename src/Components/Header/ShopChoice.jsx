@@ -3,34 +3,29 @@ import { useDispatch } from 'react-redux';
 import { connectMenu } from 'react-instantsearch-dom';
 import { selectShop } from '../../actions/selectShop';
 
-const MenuSelect = ({ items, currentRefinement, refine, searchForItems }) => {
-    console.log('items', items);
+const MenuSelect = ({ items, currentRefinement, refine }) => {
     const dispatch = useDispatch();
     return (
-        <select
-            value={currentRefinement || ''}
-            onChange={event => {
-                refine(event.currentTarget.value);
-                dispatch(selectShop(event.currentTarget.value));
-            }}
-            className="shopSelection"
-        >
-            <option value="">Shop by location</option>
+        <div className="shop-search">
             <input
-                type="search"
-                onChange={event => searchForItems(event.currentTarget.value)}
+                list="brow"
+                onChange={e => {
+                    refine(e.currentTarget.value);
+                    dispatch(selectShop(e.currentTarget.value));
+                }}
+                placeholder="Shop by location"
             />
-            {items.map(item => (
-                <>
+            <datalist id="brow">
+                {items.map(item => (
                     <option
                         key={item.label}
                         value={item.isRefined ? currentRefinement : item.value}
                     >
                         {item.label}
                     </option>
-                </>
-            ))}
-        </select>
+                ))}
+            </datalist>
+        </div>
     );
 };
 
