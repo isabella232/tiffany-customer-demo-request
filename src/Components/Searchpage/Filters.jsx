@@ -119,27 +119,31 @@ const RefinementList = ({ title, items, refine, searchForItems }) => {
                 />
             </div>
             <ul className="filter-list-content">
-                {items.map(item => (
-                    <li className="filter-list" key={item.label}>
-                        <button
-                            className={`button-filter ${
-                                item.isRefined ? 'refined-filter' : ''
-                            }`}
-                            href="#"
-                            onClick={event => {
-                                event.preventDefault();
-                                dispatch(guidedNavigation(false));
-                                refine(item.value);
-                            }}
-                        >
-                            {item.label} (
-                            <span className="refinement-count">
-                                {item.count}
-                            </span>
-                            )
-                        </button>
-                    </li>
-                ))}
+                {items.map(item =>
+                    item.label !== 'uncategorized' ? (
+                        <li className="filter-list" key={item.label}>
+                            <button
+                                className={`button-filter ${
+                                    item.isRefined ? 'refined-filter' : ''
+                                }`}
+                                href="#"
+                                onClick={event => {
+                                    event.preventDefault();
+                                    dispatch(guidedNavigation(false));
+                                    refine(item.value);
+                                }}
+                            >
+                                {item.label} (
+                                <span className="refinement-count">
+                                    {item.count}
+                                </span>
+                                )
+                            </button>
+                        </li>
+                    ) : (
+                        ''
+                    )
+                )}
             </ul>
             <div className="line"></div>
         </div>
@@ -229,7 +233,7 @@ const GuidedNavList = ({ items, refine }) => {
                                     item.isRefined ? 'refined-filter' : ''
                                 }`}
                                 href="#"
-                                onClick={(event) => {
+                                onClick={event => {
                                     event.preventDefault();
                                     dispatch(guidedNavigation(true));
                                     refine(item.value);
@@ -288,9 +292,5 @@ const CustomFilters = ({ filterAnim }) => {
         </div>
     );
 };
-
-
-
-
 
 export { CustomFilters, GuidedNavRefinementList };
