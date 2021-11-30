@@ -22,6 +22,7 @@ import { getQuery } from '../../actions/getQuery';
 
 const FederatedSearch = () => {
     // const { persona } = useSelector(state => state.selectedPersona);
+    const dispatch = useDispatch();
     const { shop } = useSelector(state => state.selectShop);
     const { query } = useSelector(state => state.getQuery);
     return (
@@ -66,6 +67,15 @@ const FederatedSearch = () => {
                         <CustomSuggestions />
                     </Index>
                 </div>
+            </div>
+            <div className="close-tag">
+                <p
+                    onClick={() => {
+                        dispatch(federatedSearchVisible(false));
+                    }}
+                >
+                    X
+                </p>
             </div>
         </div>
     );

@@ -158,3 +158,12 @@
     background-color: #68a51c;
     border: none;
 }
+
+.close-tag {
+    p {
+        position: absolute;
+        top: 15px;
+        right: 20px;
+        cursor: pointer;
+    }
+}
