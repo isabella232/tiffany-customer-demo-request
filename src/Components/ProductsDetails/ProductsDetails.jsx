@@ -8,9 +8,7 @@ import { Configure, InstantSearch } from 'react-instantsearch-dom';
 import { CustomHitsModal } from '../Searchpage/Hits';
 
 // IMPORT ASSETS
-import quality from '../../Assets/Images/quality.png';
-import energy from '../../Assets/Images/energy.png';
-import add from '../../Assets/Images/add.png';
+import productDetail from '../../Assets/Images/pdp.png';
 import { showModalPDP } from '../../actions/productDetail';
 
 const ProductDetails = () => {
@@ -42,15 +40,19 @@ const ProductDetails = () => {
                             <p className="modal-infos__grame-prod__gram">
                                 {product.LocalName}
                             </p>
-                            <p className="modal-infos__grame-prod__id">
-                                Product code: {product.PRODUCT_ID}
-                            </p>
                         </div>
                         <div className="line"></div>
+                        <p className="modal-infos__grame-prod__id">
+                            Product code: {product.master_SKU}
+                        </p>
+                        <div className="line"></div>
+                        <div className="img-container">
+                            <img src={productDetail} alt="" />
+                        </div>
                         <div className="modal-infos__grame-prod__price__wp">
                             <div className="modal-infos__grame-prod__prices">
                                 <p className="modal-infos__grame-prod__prices__price">
-                                    {product.price.shop_1 !== null
+                                    {product.price && product.price.shop_1
                                         ? `$ ${product.price.shop_1}`
                                         : ''}
                                 </p>
@@ -61,9 +63,7 @@ const ProductDetails = () => {
                             <div className="modal-infos__grame-prod__wp"></div>
                         </div>
 
-                        <div className="line"></div>
-
-                        <div className="line"></div>
+                        <p>{product.LocalDescription}</p>
                     </div>
                 </div>
                 <div className="recommand-side">

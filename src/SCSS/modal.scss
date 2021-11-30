@@ -12,7 +12,7 @@
 }
 
 .modal-wrapper {
-    background: rgba(255, 255, 255, 0.95);
+    background: rgba(255, 255, 255, 1);
     box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
     backdrop-filter: blur(14px);
     -webkit-backdrop-filter: blur(14px);
@@ -86,6 +86,16 @@
         font-weight: 100;
     }
 
+    .img-container {
+        display: flex;
+        justify-content: center;
+        margin: 1rem 0;
+        img {
+            margin: 0 auto;
+            width: 100%;
+        }
+    }
+
     .btn-modal {
         @include btn;
         width: 30%;
@@ -110,13 +120,13 @@
     }
 
     .modal-infos__grame-prod__price__wp {
-        display: flex;
+        // display: flex;
         align-items: center;
         justify-content: space-between;
         background-color: $main-color;
         .modal-infos__grame-prod__prices {
             display: flex;
-            justify-content: center;
+            justify-content: space-around;
             .modal-infos__grame-prod__prices__price {
                 color: $third-color !important;
                 font-weight: 600 !important;
