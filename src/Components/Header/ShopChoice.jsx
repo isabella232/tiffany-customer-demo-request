@@ -12,7 +12,7 @@ const MenuSelect = ({ items, currentRefinement, refine }) => {
                 type="search"
                 onChange={e => {
                     refine(e.currentTarget.value);
-                    dispatch(selectShop(e.currentTarget.value));
+                    dispatch(selectShop(e.currentTarget.value.split('//')[0]));
                 }}
                 placeholder="Shop by location"
             />
@@ -22,7 +22,7 @@ const MenuSelect = ({ items, currentRefinement, refine }) => {
                         key={item.label}
                         value={item.isRefined ? currentRefinement : item.value}
                     >
-                        {item.label}
+                        {splitFuntion(item.label)}
                     </option>
                 ))}
             </datalist>
@@ -35,12 +35,17 @@ const ShopDropdown = connectMenu(MenuSelect);
 const ShopChoice = () => {
     return (
         <ShopDropdown
-            attribute="storeName"
+            attribute="storeNameShopNumberV2"
             limit={150}
             sortBy="label:asc"
             searchable={true}
         />
     );
+};
+
+const splitFuntion = string => {
+    const words = string.split('//');
+    return words[1];
 };
 
 export default ShopChoice;
