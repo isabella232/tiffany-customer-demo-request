@@ -20,9 +20,13 @@ const MenuSelect = ({ items, currentRefinement, refine }) => {
                 {items.map(item => (
                     <option
                         key={item.label}
-                        value={item.isRefined ? currentRefinement : item.value}
+                        value={
+                            item.isRefined
+                                ? currentRefinement
+                                : splitFuntion(item.value)
+                        }
                     >
-                        {splitFuntion(item.label)}
+                        {/* {splitFuntion(item.label)} */}
                     </option>
                 ))}
             </datalist>
