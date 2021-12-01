@@ -49,7 +49,7 @@ const FederatedSearch = () => {
                     <Configure
                         hitsPerPage={6}
                         // userToken={persona}
-                        filters={shop ? `shop_availability:'${shop}'` : ''}
+                        // filters={shop ? `shop_availability:'${shop}'` : ''}
                     />
                     <Results>
                         <CustomHits />
