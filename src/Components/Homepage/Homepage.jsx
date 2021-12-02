@@ -8,6 +8,7 @@ import img4 from '../../Assets/Images/img4.png';
 import img5 from '../../Assets/Images/img5.png';
 import img7 from '../../Assets/Images/img7.png';
 import footer from '../../Assets/Images/footer.png';
+import SimpleMap from '../Map/Map';
 
 import { CarouselHome, CarouselLowPrice, CarouselEngagement } from './Carousel';
 import CardsCategory from './CardsCategory';
@@ -51,6 +52,7 @@ const Homepage = () => {
                 <div>
                     <img src={img5} alt="home" />
                 </div>
+                <SimpleMap />
             </div>
             <div className="footer">
                 <img src={footer} alt="home" />
