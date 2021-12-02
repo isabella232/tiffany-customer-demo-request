@@ -1,0 +1,49 @@
+@import './variables.scss';
+@import './mixin.scss';
+
+
+
+.menuSelect__btn{
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+.menuSelect__wrapper{
+    position: absolute;
+    top: 3rem;
+    left: 0;
+    background-color: $fourth-color;
+    z-index: 99;
+    padding: 1rem;
+    width: 20rem;
+    height: 30rem;
+    overflow: scroll;
+    border-radius: 3px;
+    box-shadow: 1px 1px 20px rgba(0,0,0,0.2);
+
+    .searchBoxMenu{
+        width: 100%;
+        margin: 0 auto 1rem auto;
+        border-radius: 3px;
+        border: 1px solid $third-color;
+        padding: 0.5rem;
+    }
+
+    .menuSelect__item{
+        display: flex;
+        flex-direction: column;
+        cursor: pointer;
+
+        p{
+            color: $main-color;
+            cursor: pointer;
+            padding-top: 0.5rem;
+                &:hover{
+                    transition: color 0.2s ease-in-out;
+                    color: $second-color;
+                }
+        }
+        
+    }
+    // display: none;
+}

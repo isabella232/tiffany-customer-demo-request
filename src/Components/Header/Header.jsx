@@ -67,7 +67,7 @@ const Header = () => {
                     </li>
                     <ul className="header__up-right">
                         <li>
-                            <svg
+                            {/* <svg
                                 width="19"
                                 height="21"
                                 viewBox="0 0 8 12"
@@ -91,7 +91,7 @@ const Header = () => {
                                         />
                                     </clipPath>
                                 </defs>
-                            </svg>
+                            </svg> */}
                             <ShopChoice />
                         </li>
                     </ul>

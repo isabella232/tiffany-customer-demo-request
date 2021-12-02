@@ -49,7 +49,7 @@ const FederatedSearch = () => {
                     <Configure
                         hitsPerPage={6}
                         // userToken={persona}
-                        filters={shop ? `shop_availability:'${shop}'` : ''}
+                        // filters={shop ? `shop_availability:'${shop}'` : ''}
                     />
                     <Results>
                         <CustomHits />
@@ -113,7 +113,6 @@ const RecentSearches = () => {
 };
 
 const InjectedContent = ({ items }) => {
-    console.log('InjectedContent', items);
     return (
         <div className="injectedContent__wrapper">
             {items.map(({ button, image, target, value }) => {

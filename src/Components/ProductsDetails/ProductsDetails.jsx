@@ -15,6 +15,7 @@ const ProductDetails = () => {
     const searchClient = algoliasearch(window.appID, window.key);
     const dispatch = useDispatch();
     const { product, showModal } = useSelector(state => state.productDetail);
+    const { shop } = useSelector(state => state.selectShop);
 
     if (product) {
         return (
@@ -52,9 +53,9 @@ const ProductDetails = () => {
                         <div className="modal-infos__grame-prod__price__wp">
                             <div className="modal-infos__grame-prod__prices">
                                 <p className="modal-infos__grame-prod__prices__price">
-                                    {product.price && product.price.shop_53
-                                        ? `$ ${product.price.shop_53}`
-                                        : ''}
+                                    {shop && product.price.shop
+                                        ? `$ ${product.price.shop}`
+                                        : `$ ${product.price.shop_53}`}
                                 </p>
                                 <p className="modal-infos__grame-prod__prices__price">
                                     Add to bag
