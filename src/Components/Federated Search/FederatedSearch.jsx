@@ -113,7 +113,6 @@ const RecentSearches = () => {
 };
 
 const InjectedContent = ({ items }) => {
-    console.log('InjectedContent', items);
     return (
         <div className="injectedContent__wrapper">
             {items.map(({ button, image, target, value }) => {
